@@ -1,0 +1,52 @@
+/*mood.wxss*/
+.mood{
+  margin: 100rpx 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.questionMood{
+  font-size: 48rpx;
+}
+
+.answerMood{
+  margin: 100rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftButton{
+  height: 80rpx;
+  width: 80rpx;
+  padding: 10rpx 10rpx;
+  border: none;
+}
+
+.rightButton{
+  height: 80rpx;
+  width: 80rpx;
+  padding: 10rpx 10rpx;
+  border: none;
+}
+
+.icon{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.answer{
+  height: 400rpx;
+  width: 400rpx;
+}
+
+.saveMode{
+  display: flex;
+  justify-content: space-around;
+}
+
+.next{
+  width: 300rpx;
+}

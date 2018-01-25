@@ -1,0 +1,26 @@
+.all{
+  background-color: white;
+}
+
+.thinking{
+  margin: 30rpx 30rpx;
+  padding: 10rpx 20rpx;
+  border: 1px solid grey;
+  height: 400rpx;
+}
+
+.boxGroup{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.checkbox{
+  height: 50rpx;
+  margin: 0rpx 100rpx;
+  padding: 10rpx;
+}
+
+.next{
+  width: 300rpx;
+}

@@ -1,0 +1,16 @@
+<!--details.wxml-->
+<view class="details">
+  <view class="write">
+    <view class="contentTitle">{{title}}</view>
+    <!-- <view>{{mood}}</view>  -->
+    <view class="content">
+      <input type="text" placeholder="{{contentHolder}}" 
+      bindinput="diary" auto-focus/>
+      <!-- <view>{{inputValue}}</view> -->
+    </view>
+  </view>
+  <view class="saveMode">
+      <button class="next" bindtap='savemode'>{{quickSave}}</button>
+      <button class="next" bindtap='nextPage'>{{analysisThen}}</button>
+  </view>
+</view>

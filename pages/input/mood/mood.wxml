@@ -1,0 +1,20 @@
+<!--mood.wxml-->
+<view class="mood">
+  <view class="questionMood">
+  {{question}}
+  </view>
+  <view class="answerMood">
+    <button class="leftButton" plain="true" bindtap='mines'>
+      <image class="icon" src="images/back.png"/>
+    </button>
+    <image class="answer" src="{{answer}}" />
+    <view class="moodPic"></view>
+    <button class="rightButton" plain="true" bindtap='add'>
+      <image class="icon" src="images/more.png"/>
+    </button>
+  </view>
+  <view class="saveMode">
+    <button class="next" bindtap='savemode'>{{quickSave}}</button>
+    <button class="next" bindtap='nextPage'>{{moreDetails}}</button>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<!--success.wxml-->
+<view class="success">
+  <view class="pic1">
+    <image class="pic" src="cat.png" />
+  </view>
+  <view class="text">{{text}}</view>
+  <button class="back">{{back}}</button>
+</view>

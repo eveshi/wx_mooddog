@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/input/mood/mood",
+    "pages/input/details/details",
+    "pages/input/success/success",
+    "pages/input/analysis/analysis",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/input/congratulation/congratulation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "情绪记录喵",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#c0c0c0",
+    "selectedColor": "#fff",
+    "borderStyle": "black",
+    "backgroundColor": "#35495e",
+    "list": [
+      {
+        "text": "记录",
+        "iconPath": "images/history.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "添加",
+        "iconPath": "images/add.png",
+        "pagePath": "pages/input/mood/mood"
+      },
+      {
+        "text": "数据",
+        "iconPath": "images/data.png",
+        "pagePath": "pages/logs/logs"
+      }
+    ]
+  }
+}

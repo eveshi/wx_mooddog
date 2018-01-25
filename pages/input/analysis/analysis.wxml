@@ -1,0 +1,25 @@
+ <!--analysis.wxml-->
+ <view class="all">
+  <view class="changeMood">
+    <view class="thinking">
+      <input class="wrong" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    </view>
+    <view class="emotionTrap">
+      <button />
+      <!-- 改成勾选好了 -->
+      <checkbox-group class="boxGroup" bindchange="checkboxChange">
+         <label class="checkbox" wx:for="{{items}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+         </label>
+      </checkbox-group>
+    </view>
+    <view class="thinking">
+      <input class="right" placeholder="{{rightHolder}}" bindinput="right"/>
+    </view>
+    <view class="afterMode"></view>
+    <view class="saveMode">
+      <button class="next" bindtap='savemode'>{{save}}</button>
+    </view>
+  </view>
+</view>
+  
