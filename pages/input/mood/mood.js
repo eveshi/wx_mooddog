@@ -60,8 +60,15 @@ Page({
 
   nextPage: function(){
     //进入下一界面并传参
-    wx.navigateTo({
-      url: '../details/details?id='+i,
-    })
+    if(i<3){
+      wx.navigateTo({
+        url: '../details/details?id='+i,
+      })      
+    }
+    else{
+      wx.navigateTo({
+        url: '../detailHappy/detailHappy?id=' + i,
+      })      
+    }
   }
 })

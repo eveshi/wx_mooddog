@@ -1,0 +1,22 @@
+<!--pages/input/detailHappy/detailHappy.wxml-->
+<!--details.wxml-->
+
+<view class="details">
+  <view class="moodSlider">
+    <text class="section__title">愉快</text>
+    <view class="body-view">
+      <slider bindchange="slider2change" step="5"/>
+    </view>
+  </view>
+  <view class="write">
+    <view class="contentTitle">{{title}}</view>
+    <view class="content">
+      <textarea type="text" placeholder="{{contentHolder}}" 
+      bindinput="diary" auto-focus/>
+    </view>
+  </view>
+  <view class="saveMode">
+      <button class="next" bindtap='savemode'>{{quickSave}}</button>
+      <button class="next" bindtap='nextPage'>{{analysisThen}}</button>
+  </view>
+</view>

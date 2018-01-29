@@ -1,0 +1,27 @@
+/* pages/input/detailHappy/detailHappy.wxss */
+
+.write{
+  margin: 40rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentTitle{
+  text-align: center;
+}
+
+.content{
+  margin: 30rpx 30rpx;
+  padding: 10rpx 20rpx;
+  border: 1px solid grey;
+  height: 800rpx;
+}
+
+.saveMode{
+  display: flex;
+  justify-content: space-around;
+}
+
+.next{
+  width: 300rpx;
+}

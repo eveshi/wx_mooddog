@@ -6,7 +6,8 @@
     "pages/input/analysis/analysis",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/input/congratulation/congratulation"
+    "pages/input/congratulation/congratulation",
+    "pages/input/detailHappy/detailHappy"
   ],
   "window": {
     "backgroundTextStyle": "light",
