@@ -1,12 +1,16 @@
 <!--details.wxml-->
 <view class="details">
+  <view class="moodSlider">
+    <text class="section__title">失望</text>
+    <view class="body-view">
+      <slider bindchange="slider2change" step="5"/>
+    </view>
+  </view>
   <view class="write">
     <view class="contentTitle">{{title}}</view>
-    <!-- <view>{{mood}}</view>  -->
     <view class="content">
-      <input type="text" placeholder="{{contentHolder}}" 
+      <textarea type="text" placeholder="{{contentHolder}}" 
       bindinput="diary" auto-focus/>
-      <!-- <view>{{inputValue}}</view> -->
     </view>
   </view>
   <view class="saveMode">
