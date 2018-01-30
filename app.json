@@ -11,29 +11,32 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#8A976A",
     "navigationBarTitleText": "情绪记录喵",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
-    "color": "#c0c0c0",
-    "selectedColor": "#fff",
+    "color": "#E6E7CE",
+    "selectedColor": "#8A976A",
     "borderStyle": "black",
-    "backgroundColor": "#35495e",
+    "backgroundColor": "#fff",
     "list": [
       {
         "text": "记录",
         "iconPath": "images/history.png",
+        "selectedIconPath": "images/history1.png",
         "pagePath": "pages/index/index"
       },
       {
         "text": "添加",
         "iconPath": "images/add.png",
+        "selectedIconPath": "images/add1.png",
         "pagePath": "pages/input/mood/mood"
       },
       {
         "text": "数据",
         "iconPath": "images/data.png",
+        "selectedIconPath": "images/data1.png",
         "pagePath": "pages/logs/logs"
       }
     ]

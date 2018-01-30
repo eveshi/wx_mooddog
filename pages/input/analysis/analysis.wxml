@@ -1,31 +1,31 @@
  <!--analysis.wxml-->
  <view class="mainpage">
   <view class="statement">
-    <textarea class="wrong" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
       <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
       </picker>
     </view>
-    <textarea class="right" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
   </view>
   <view class="statement">
-    <textarea class="wrong" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
       <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
       </picker>
     </view>
-    <textarea class="right" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
   </view>
   <view class="statement">
-    <textarea class="wrong" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
       <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
       </picker>
     </view>
-    <textarea class="right" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
   </view>
   <view class="saveMode">
     <button class="next" bindtap='savemode'>{{save}}</button>

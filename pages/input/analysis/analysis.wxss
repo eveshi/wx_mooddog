@@ -1,26 +1,19 @@
-.all{
-  background-color: white;
+.statement{
+  margin: 5vw;
+  width: 90vw;
+  height: 40vh;
+  border-left: 6px solid #52372A;
+  background-color: #b3cad5;
 }
 
-.thinking{
-  margin: 30rpx 30rpx;
-  padding: 10rpx 20rpx;
-  border: 1px solid grey;
-  height: 400rpx;
+.inputArea{
+  margin: 5vw;
+  width: 15vh;
+
 }
 
-.boxGroup{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.checkbox{
-  height: 50rpx;
-  margin: 0rpx 100rpx;
-  padding: 10rpx;
-}
-
-.next{
-  width: 300rpx;
-}
+/* #FEFEFD
+#D7EA76
+#E6E7CE
+#8A976A
+#DBE494 */

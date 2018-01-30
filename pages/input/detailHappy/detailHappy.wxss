@@ -14,7 +14,7 @@
   margin: 30rpx 30rpx;
   padding: 10rpx 20rpx;
   border: 1px solid grey;
-  height: 800rpx;
+  height: 60vh;
 }
 
 .saveMode{
