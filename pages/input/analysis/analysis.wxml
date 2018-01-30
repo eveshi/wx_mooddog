@@ -1,12 +1,21 @@
  <!--analysis.wxml-->
+<view class="bgLine"></view>
+
  <view class="mainpage">
-  <view class="description">{{descri}}</view>
+  <image class="headPic" mode="aspectFit" src="../../../images/doge.png" />
+  <view class="description">
+    <view class="desText">{{descri}}</view>
+    <image class="quesMark" mode="aspectFit" src="../../../images/quesMarkLight.png" />
+  </view>
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
-      <view class="trapTitle">{{whatTrap}}</view>
-      <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-        <view>▶ {{items[index].name}} ◀</view>
+      <view class="trapTitle">
+        {{whatTrap}}
+        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+      </view>
+      <picker class="trapPicker" bindchange="trapChange0" range="{{items}}" range-key="{{'name'}}" value="{{items[index0].id}}">
+        <view>▶ {{items[index0].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
@@ -14,9 +23,12 @@
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
-      <view class="trapTitle">{{whatTrap}}</view>
-      <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-        <view>▶ {{items[index].name}} ◀</view>
+      <view class="trapTitle">
+        {{whatTrap}}
+        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+      </view>
+      <picker class="trapPicker" bindchange="trapChange1" range="{{items}}" range-key="{{'name'}}" value="{{items[index1].id}}">
+        <view>▶ {{items[index1].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
@@ -24,9 +36,12 @@
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
-      <view class="trapTitle">{{whatTrap}}</view>
-      <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-        <view>▶ {{items[index].name}} ◀</view>
+      <view class="trapTitle">
+        {{whatTrap}}
+        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+      </view>
+      <picker class="trapPicker" bindchange="trapChange2" range="{{items}}" range-key="{{'name'}}" value="{{items[index2].id}}">
+        <view>▶ {{items[index2].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>

@@ -6,9 +6,9 @@ var app = getApp();
 Page({
 
   data: {
-    title: "刚才发生了什么呢？",
+    title: "汪~今天发生了什么呢？",
     saveAll: "保存全部",
-    contentHolder: "刚才……",
+    contentHolder: "我……（请尽可能准确地描述自己的情绪，具体的词汇可以点击上方的小问号，参考我们的词汇表哦）",
     inputValue: "",
     quickSave: "保存",
     analysisThen: "分析",

@@ -1,6 +1,44 @@
+.bgLine{
+  position: absolute; 
+  margin-top: 16vh;
+  width: 40vw;
+  height: 150vh;
+  border-right: 1vw solid #72523d;
+  z-index: 0; 
+}
+
+ .mainpage{
+  position: absolute;
+  z-index: 1;
+} 
+
+.headPic{
+  margin-top: 3vh;
+  height: 16vh;
+}
+
 .description{
+  width: 75vw;
+  margin: auto auto auto 20vw;
   text-align: center;
   font-size: 14px;
+  color: #FEFEFD;
+  border: 2px solid #72523d;
+  border-radius: 5px;
+  background-color: #72523d;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);
+}
+
+.desText{
+  margin: auto 0 auto auto;
+}
+
+.quesMark{
+  margin: auto auto auto 2px;
+  height: 16px;
+  width: 16px;
 }
 
 .statement{

@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/input/mood/mood",
     "pages/input/details/details",
-    "pages/input/success/success",
+    "pages/input/mood/mood",
     "pages/input/analysis/analysis",
+    "pages/input/success/success",
     "pages/index/index",
     "pages/logs/logs",
     "pages/input/congratulation/congratulation",

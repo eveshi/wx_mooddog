@@ -1,7 +1,7 @@
 <!--success.wxml-->
 <view class="success">
   <view class="pic1">
-    <image class="pic" src="cat.png" />
+    <image class="pic" mode="aspectFit" src="../../../images/doge.png" />
   </view>
   <view class="text">{{text}}</view>
   <button class="back">{{back}}</button>

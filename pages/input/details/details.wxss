@@ -4,6 +4,12 @@
   flex-direction: column;
 }
 
+.quesMark{
+  margin: auto auto auto 2px;
+  height: 16px;
+  width: 16px;
+}
+
 .contentTitle{
   text-align: center;
 }

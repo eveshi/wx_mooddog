@@ -2,24 +2,6 @@
 <!--details.wxml-->
 
 <view class="details">
-  <view class="moodSlider">
-    <text class="section__title">愉快</text>
-    <view class="body-view">
-      <slider bindchange="slider2change" step="5"/>
-    </view>
-    <text class="section__title">愉快</text>
-    <view class="body-view">
-      <slider bindchange="slider2change" step="5"/>
-    </view>
-    <text class="section__title">愉快</text>
-    <view class="body-view">
-      <slider bindchange="slider2change" step="5"/>
-    </view>
-    <text class="section__title">愉快</text>
-    <view class="body-view">
-      <slider bindchange="slider2change" step="5"/>
-    </view>
-  </view>
   <view class="write">
     <view class="contentTitle">{{title}}</view>
     <view class="content">
