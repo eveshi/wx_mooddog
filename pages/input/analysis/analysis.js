@@ -3,6 +3,9 @@
 Page({
 
   data: {
+    popUp: "汪~你做得非常好！你知道吗？我们出现负面想法，常常是因为我们陷入了一些思维的陷阱。现在，就让我们一起来看一看，是什么负面想法困扰了你呢？",
+    descri:"让我们写出三个困扰你的想法吧！",
+    whatTrap: "诶~我陷入的思维陷阱是：",
     items: [
       { id: '1', name:'要么全都是，要么全都不是' },
       { id: '2', name: '仅是指责'},
@@ -45,5 +48,20 @@ Page({
     })
     console.log(this.data.inputRightValue)
   },
+
+  onReady: function(){
+    wx.showModal({
+      content: this.data.popUp,
+      conformText: "我明白了",
+      showCancel: false,
+      confirmColor: "#8A976A",
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else {
+        }
+      }
+    })
+  }
 
 })

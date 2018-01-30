@@ -1,10 +1,12 @@
  <!--analysis.wxml-->
  <view class="mainpage">
+  <view class="description">{{descri}}</view>
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
+      <view class="trapTitle">{{whatTrap}}</view>
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-      <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
+        <view>▶ {{items[index].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
@@ -12,8 +14,9 @@
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
+      <view class="trapTitle">{{whatTrap}}</view>
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-      <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
+        <view>▶ {{items[index].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
@@ -21,8 +24,9 @@
   <view class="statement">
     <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
     <view class="trap">
+      <view class="trapTitle">{{whatTrap}}</view>
       <picker class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index].id}}">
-      <view>你陷入的情绪陷阱是：{{items[index].name}}</view>
+        <view>▶ {{items[index].name}} ◀</view>
       </picker>
     </view>
     <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
