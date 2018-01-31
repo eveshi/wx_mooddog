@@ -1,2 +1,4 @@
 <!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<view wx:for="{{userOb1}}">
+{{item}}
+</view>

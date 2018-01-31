@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    userOb1: "asd",
   },
 
   /**
@@ -15,21 +15,54 @@ Page({
    */
   onLoad: function (options) {
 
-    let MyUser = new wx.BaaS.User()
+    let userInfo = wx.BaaS.storage.get('userinfo')
+    // wx.showLoading({
+    //   title: '狗粮进食中~',
+    //   mask: true
+    // })
+    // 尝试获取用户信息，若获取失败，则使用 wx.BaaS.login 进行登录
+    if (userInfo) {
+      let {
+      id
+    } = userInfo
+      this.setData({
+        id
+      })
+    console.log(id)
+    }
+    else {
+      wx.BaaS.login().then(res => {
+        let {
+        id
+      } = wx.BaaS.storage.get('userinfo')
+        this.setData({
+          id
+        })
+        console.log(id)
+      }).catch(err => console.log(err))
+    }
 
-    // wx.BaaS.login 方法会返回完成登录后的当前用户信息，同时，我们也给出 wx.BaaS.storage.get('userinfo') 获取存储在 storage 的当前用户信息。
-    let user = new wx.Baas.storage.get('userid')
-
-    // 查询 nickName 中包含 like 的用户
+    //利用query查询含有相关id的文件
     let query = new wx.BaaS.Query()
 
-    query.equalTo("id",uid)
+    var id = parseInt(userInfo.id)
+    console.log(id)
 
-    MyUser.setQuery(query).find().then((res) => {
-      console.log(res.data)
+    query.compare("created_by","=",id)
+
+    let tableID = 21194
+
+    var Product = new wx.BaaS.TableObject(tableID)
+    Product.setQuery(query).find().then((res) => {
+      var userData = res.data
+      console.log(userData)
+      this.setData({
+        userOb1: userData['objects'][0]
+      })
     }, (err) => {
       // err
     })
+
 
   },
 
