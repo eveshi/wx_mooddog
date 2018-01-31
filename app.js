@@ -19,8 +19,12 @@ App({
     wx.BaaS.init(clientID)
 
     // 登录
-    wx.BaaS.login(false).then((res) => {
-
+    wx.BaaS.login().then((res) => {
+      // wx.BaaS.storage.set("userId", res.data.id)
+      // console.log(res.data)
+      console.log("1")
+      let data1 = res.data.id
+      console.log(data1)
     }, (err) => {
 
     })

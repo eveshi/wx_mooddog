@@ -9,8 +9,9 @@ Page({
     descri:"让我们写出三个困扰你的想法吧！",
     whatTrap: "诶~我陷入的思维陷阱是：",
     items: [
-      { id: 0, name: '要么全都是，要么全都不是' },
+      { id: 0, name: '请选择' },
       { id: 1, name: '仅是指责'},
+      { id: 2, name: '全都是和全不是'}
       // { name: 'Cata', value: '悲观夸大' },
       // { name: 'DownP', value: '无视积极面' },
       // { name: 'EmoRea', value: '仅靠感觉判断' },
@@ -94,8 +95,8 @@ Page({
     product.set('tgts3', this.data.inValue[4].value)
     product.set('tgts3Change', this.data.inValue[5].value)
     product.set('tgts1TrapId', this.data.index[0].value)
-    product.set('tgts1TrapId', this.data.index[1].value)
-    product.set('tgts1TrapId', this.data.index[2].value)
+    product.set('tgts2TrapId', this.data.index[1].value)
+    product.set('tgts3TrapId', this.data.index[2].value)
 
     product.save().then((res) => {
       //成功提示成功
