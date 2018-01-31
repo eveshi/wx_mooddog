@@ -2,12 +2,13 @@
   "pages": [
     "pages/input/mood/mood",
     "pages/input/details/details",
+    "pages/input/detailHappy/detailHappy",
     "pages/input/analysis/analysis",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/input/congratulation/congratulation",
-    "pages/input/detailHappy/detailHappy",
-    "pages/input/moodName/moodName"
+    "pages/input/moodName/moodName",
+    "pages/history/history",
+    "pages/input/example/example"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +26,7 @@
         "text": "记录",
         "iconPath": "images/history.png",
         "selectedIconPath": "images/history1.png",
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/history/history"
       },
       {
         "text": "添加",

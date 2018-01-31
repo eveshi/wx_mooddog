@@ -2,16 +2,7 @@
 App({
   globalData:{
     mood: 2,
-    detailValue: "",
-    tgts1: "",
-    // tgts1TrapId: 0,
-    // tgts1Change: "",
-    // tgts2: "",
-    // tgts2TrapId: 0,
-    // tgts2Change: "",
-    // tgts3: "",
-    // tgts3TrapId: 0,
-    // tgts3Change: "",    
+    detailValue: "",   
   },
 
   onLaunch: function () {

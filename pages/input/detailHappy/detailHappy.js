@@ -33,8 +33,19 @@ Page({
 
     product.save().then((res) => {
       //成功提示成功
-      wx.navigateTo({
-        url: '../success/success',
+      wx.showModal({
+        content: '保存成功！',
+        showCancel: false,
+        confirmColor: "#8A976A",
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.reLaunch({
+              url: '../mood/mood',
+            })
+          } else {
+          }
+        },
       })
     }, (err) => { })
   },

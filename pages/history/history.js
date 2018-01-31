@@ -1,4 +1,6 @@
-// pages/input/congratulation/congratulation.js
+// pages/history/history.js
+var app = getApp()
+
 Page({
 
   /**

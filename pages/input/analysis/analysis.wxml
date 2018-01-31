@@ -15,8 +15,8 @@
         {{whatTrap}}
         <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
-      <picker class="trapPicker" bindchange="trapChange0" range="{{items}}" range-key="{{'name'}}" value="{{items[index0].id}}">
-        <view>▶ {{items[index0].name}} ◀</view>
+      <picker id="0" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[0].value].id}}">
+        <view>▶ {{items[index[0].value].name}} ◀</view>
       </picker>
     </view>
     <textarea id="inR1" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue"/>
@@ -28,11 +28,11 @@
         {{whatTrap}}
         <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
-      <picker class="trapPicker" bindchange="trapChange1" range="{{items}}" range-key="{{'name'}}" value="{{items[index1].id}}">
-        <view>▶ {{items[index1].name}} ◀</view>
+      <picker id="1" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[1].value].id}}">
+        <view>▶ {{items[index[1].value].name}} ◀</view>
       </picker>
     </view>
-    <textarea id="inR2" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue"/>
+    <textarea id="inR2" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue" auto-focus />
   </view>
   <view class="statement">
     <textarea id="inW3" class="inputArea" placeholder="{{wrongHolder}}" bindinput="inputValue" auto-focus/>
@@ -41,11 +41,11 @@
         {{whatTrap}}
         <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
-      <picker class="trapPicker" bindchange="trapChange2" range="{{items}}" range-key="{{'name'}}" value="{{items[index2].id}}">
-        <view>▶ {{items[index2].name}} ◀</view>
+      <picker id="2" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[2].value].id}}">
+        <view>▶ {{items[index[2].value].name}} ◀</view>
       </picker>
     </view>
-    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea id="inR3" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue" auto-focus/>
   </view>
   <view class="saveMode">
     <button class="next" bindtap='savemode'>{{save}}</button>

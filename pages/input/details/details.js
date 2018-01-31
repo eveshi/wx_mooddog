@@ -1,7 +1,5 @@
 //detail.js
 var app = getApp();
-// var mood;
-// var inputValue;
 
 Page({
 
@@ -18,10 +16,6 @@ Page({
     this.setData({
       inputValue: e.detail.value
     })
-    
-    app.globalData.detailValue = this.inputValue
-
-    console.log(this.data.inputValue)
   },
 
   savemode: function(){
@@ -33,6 +27,8 @@ Page({
     product.set('moodSave', app.globalData.mood)
     product.set('content', this.data.inputValue)
 
+    app.globalData.detailValue = this.data.inputValue
+
     product.save().then((res) => {
       //成功提示成功
       wx.showModal({
@@ -42,9 +38,12 @@ Page({
         success: function (res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.reLaunch({
+              url: '../mood/mood',
+            })
           } else {
           }
-        }
+        },
       })
      }, (err) => { })
   },
@@ -54,6 +53,8 @@ Page({
   },
 
   nextPage: function () {
+    app.globalData.detailValue = this.data.inputValue
+
     wx.navigateTo({
       url: '../analysis/analysis',
     })

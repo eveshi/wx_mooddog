@@ -60,6 +60,9 @@ Page({
         success: function (res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.reLaunch({
+              url: '../mood/mood',
+            })
           } else {
           }
           }
@@ -69,6 +72,8 @@ Page({
   },
 
   nextPage: function(){
+    app.globalData.mood = i
+
     //进入下一界面并传参
     if(i<3){
       wx.navigateTo({
