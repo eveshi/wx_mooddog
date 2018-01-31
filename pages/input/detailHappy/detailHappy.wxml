@@ -1,9 +1,10 @@
 <!--pages/input/detailHappy/detailHappy.wxml-->
-<!--details.wxml-->
-
 <view class="details">
   <view class="write">
-    <view class="contentTitle">{{title}}</view>
+    <view class="head">
+      <view class="contentTitle">{{title}}</view>
+      <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+    </view>
     <view class="content">
       <textarea type="text" placeholder="{{contentHolder}}" 
       bindinput="diary" auto-focus/>
@@ -11,6 +12,5 @@
   </view>
   <view class="saveMode">
       <button class="next" bindtap='savemode'>{{quickSave}}</button>
-      <button class="next" bindtap='nextPage'>{{analysisThen}}</button>
   </view>
 </view>

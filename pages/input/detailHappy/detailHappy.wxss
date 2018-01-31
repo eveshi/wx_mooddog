@@ -6,15 +6,29 @@
   flex-direction: column;
 }
 
+.head{
+  width: 80vw;
+  margin: 0 20vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.quesMark{
+  margin: auto auto auto 2px;
+  height: 16px;
+  width: 16px;
+}
+
 .contentTitle{
   text-align: center;
 }
 
 .content{
-  margin: 30rpx 30rpx;
-  padding: 10rpx 20rpx;
+  margin: 30rpx 5vw;
+  padding: 2vw;
   border: 1px solid grey;
   height: 60vh;
+  width: 86vw;
 }
 
 .saveMode{
@@ -24,4 +38,10 @@
 
 .next{
   width: 300rpx;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #FEFEFD;
+  border-radius: 10px;
+  color: #FEFEFD;
+  background-color: #8A976A;
 }

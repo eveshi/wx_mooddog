@@ -1,14 +1,15 @@
  <!--analysis.wxml-->
 <view class="bgLine"></view>
+<image class="headPic" mode="aspectFit" src="../../../images/doge.png" />
 
  <view class="mainpage">
-  <image class="headPic" mode="aspectFit" src="../../../images/doge.png" />
+  <!-- <image class="headPic" mode="aspectFit" src="../../../images/doge.png" /> -->
   <view class="description">
     <view class="desText">{{descri}}</view>
     <image class="quesMark" mode="aspectFit" src="../../../images/quesMarkLight.png" />
   </view>
   <view class="statement">
-    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea id="inW1" class="inputArea" placeholder="{{wrongHolder}}" bindinput="inputValue" auto-focus/>
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}
@@ -18,10 +19,10 @@
         <view>▶ {{items[index0].name}} ◀</view>
       </picker>
     </view>
-    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea id="inR1" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue"/>
   </view>
   <view class="statement">
-    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea id="inW2" class="inputArea" placeholder="{{wrongHolder}}" bindinput="inputValue" auto-focus/>
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}
@@ -31,10 +32,10 @@
         <view>▶ {{items[index1].name}} ◀</view>
       </picker>
     </view>
-    <textarea class="inputArea" placeholder="{{rightHolder}}" bindinput="right"/>
+    <textarea id="inR2" class="inputArea" placeholder="{{rightHolder}}" bindinput="inputValue"/>
   </view>
   <view class="statement">
-    <textarea class="inputArea" placeholder="{{wrongHolder}}" bindinput="wrong" auto-focus/>
+    <textarea id="inW3" class="inputArea" placeholder="{{wrongHolder}}" bindinput="inputValue" auto-focus/>
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}

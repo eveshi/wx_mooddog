@@ -49,10 +49,20 @@ Page({
 
     product.set('moodSave', i)
 
+    app.globalData.mood = i
+
     product.save().then((res) => {
       //成功保存，出现成功界面
-      wx.navigateTo({
-        url: '../success/success',
+      wx.showModal({
+        content: '保存成功！',
+        showCancel: false,
+        confirmColor: "#8A976A",
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+          }
+          }
       })
      }, (err) => { })
 
@@ -62,12 +72,12 @@ Page({
     //进入下一界面并传参
     if(i<3){
       wx.navigateTo({
-        url: '../details/details?id='+i,
+        url: '../details/details',
       })      
     }
     else{
       wx.navigateTo({
-        url: '../detailHappy/detailHappy?id=' + i,
+        url: '../detailHappy/detailHappy',
       })      
     }
   }

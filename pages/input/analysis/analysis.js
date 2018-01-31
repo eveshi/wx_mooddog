@@ -1,5 +1,15 @@
 //analysis.js
 
+var app = getApp()
+var inValue = {
+  inW1: "abxc",
+  inR1: "abc",
+  inW2: "abv",
+  inR2: "bmb",
+  inW3: "yui",
+  inR3: "ftu",
+}
+
 Page({
 
   data: {
@@ -7,7 +17,7 @@ Page({
     descri:"让我们写出三个困扰你的想法吧！",
     whatTrap: "诶~我陷入的思维陷阱是：",
     items: [
-      { id: '1', name:'要么全都是，要么全都不是' },
+      { id: '1', name: '要么全都是，要么全都不是' },
       { id: '2', name: '仅是指责'},
       // { name: 'Cata', value: '悲观夸大' },
       // { name: 'DownP', value: '无视积极面' },
@@ -26,11 +36,17 @@ Page({
     index0: 0,
     index1: 0,
     index2: 0,
-    save: "保存",
+    save: "全部保存",
     rightHolder: "我觉得其实也可以这样想……",
     wrongHolder: "我的想法是……",
-    inputWrongValue: "",
-    inputRightValue: ""
+    tgts1TrapId: 0,
+    tgts1Change: "",
+    tgts2: "",
+    tgts2TrapId: 0,
+    tgts2Change: "",
+    tgts3: "",
+    tgts3TrapId: 0,
+    tgts3Change: "", 
   },
 
   checkboxChange: function (e) {
@@ -70,6 +86,46 @@ Page({
     this.setData({
       index2: e.detail.value
     })
+  },
+
+  inputValue: function(e){
+    var id = e.target.id
+    inValue.id = e.detail.value
+    console.log(inValue.id)
+  },
+
+  savemode: function () {
+    // 向 tableID 为 21194 的数据表插入一条记录
+    let tableID = 21194
+    let Product = new wx.BaaS.TableObject(tableID)
+    let product = Product.create()
+
+    product.set('moodSave', app.globalData.mood)
+    product.set('content', app.globalData.detailValue)
+    product.set('tgts1',inValue.inW1)
+    product.set('tgts1Change', inValue.inR1)
+    product.set('tgts2', inValue.inW2)
+    product.set('tgts2Change', inValue.inR2)
+    product.set('tgts3', inValue.inW3)
+    product.set('tgts3Change', inValue.inR3)
+    product.set('tgts1Trap', this.index0)
+    product.set('tgts1Trap', this.index1)
+    product.set('tgts1Trap', this.index2)
+
+    product.save().then((res) => {
+      //成功提示成功
+      wx.showModal({
+        content: '保存成功！',
+        showCancel: false,
+        confirmColor: "#8A976A",
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+          }
+        }
+      })
+    }, (err) => { })
   },
 
   onReady: function(){

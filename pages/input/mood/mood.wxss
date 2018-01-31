@@ -82,4 +82,10 @@
 
 .next{
   width: 300rpx;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #FEFEFD;
+  border-radius: 10px;
+  color: #FEFEFD;
+  background-color: #8A976A;
 }

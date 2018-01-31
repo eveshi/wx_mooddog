@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/input/details/details",
     "pages/input/mood/mood",
+    "pages/input/details/details",
     "pages/input/analysis/analysis",
-    "pages/input/success/success",
     "pages/index/index",
     "pages/logs/logs",
     "pages/input/congratulation/congratulation",
-    "pages/input/detailHappy/detailHappy"
+    "pages/input/detailHappy/detailHappy",
+    "pages/input/moodName/moodName"
   ],
   "window": {
     "backgroundTextStyle": "light",

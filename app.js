@@ -1,5 +1,19 @@
 //app.js
 App({
+  globalData:{
+    mood: 2,
+    detailValue: "",
+    tgts1: "",
+    // tgts1TrapId: 0,
+    // tgts1Change: "",
+    // tgts2: "",
+    // tgts2TrapId: 0,
+    // tgts2Change: "",
+    // tgts3: "",
+    // tgts3TrapId: 0,
+    // tgts3Change: "",    
+  },
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

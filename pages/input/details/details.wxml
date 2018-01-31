@@ -5,9 +5,8 @@
       <view class="contentTitle">{{title}}</view>
       <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
     </view>
-    <view class="content">
-      <textarea type="text" placeholder="{{contentHolder}}" 
-      bindinput="diary" auto-focus/>
+    <view>
+      <textarea class="content" type="text" placeholder="{{contentHolder}}" bindinput="diary" auto-focus/>
     </view>
   </view>
   <view class="saveMode">
