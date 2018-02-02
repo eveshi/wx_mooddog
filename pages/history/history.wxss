@@ -8,9 +8,14 @@
 }
 
 .moodFilter{
-  /* width: 120px; */
   text-align: center;
   color: #FEFEFD;
-  /* border: 3px solid #72523d;
-  border-radius: 10px; */
+}
+
+.content{
+  font-size: 14px;
+  height: 48px;
+  margin: auto 5vw;
+  width: 90vw;
+  border-bottom: 1px dotted #8A976A;
 }

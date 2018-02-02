@@ -1,5 +1,12 @@
 // pages/history/history.js
 var app = getApp()
+const imageLink = [
+  "../../../images/verySad.png",
+  "../../../images/sad.png",
+  "../../../images/calm.png",
+  "../../../images/happy.png",
+  "../../../images/veryHappy.png"
+]
 
 Page({
 
@@ -16,7 +23,7 @@ Page({
       { name: "0", value: "好不开心"},
     ],
     index: 0,
-    userOb1: "asd",
+    userHistory:[],
   },
 
   moodChange: function(e){
@@ -71,15 +78,26 @@ Page({
     Product.setQuery(query).find().then((res) => {
       var userData = res.data
       var objectLen = userData['objects'].length
-      var cont = []
+      var historySingle = { year: 0, month:0, day:0, content: "", mood: "" }
+      var history = []
+      var mood = 0
+      var date
       console.log(userData)
       console.log(objectLen)
       for(var i=0; i<objectLen; i++){
-        cont.push(userData['objects'][i].content)
+        date = new Date(userData['objects'][i].created_at*1000)
+        historySingle.year = date.getFullYear()
+        historySingle.month = date.getMonth()+1
+        historySingle.day = date.getDate()
+        historySingle.content = userData['objects'][i].content
+        mood = userData['objects'][i].moodSave
+        historySingle.mood = imageLink[mood]
+        history.push(historySingle)
+        historySingle = { year: "", month: "", day: "", content: "", mood: "" }
       }
-      console.log(cont)
+      console.log(history)
       this.setData({
-        userOb1: cont
+        userHistory: history
       })
     }, (err) => {
       // err

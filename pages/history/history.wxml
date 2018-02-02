@@ -6,9 +6,12 @@
         <view>汪汪过滤器：▼ {{filter[index].value}} ▼</view>
       </picker>
     </view>
-    <view class="search"></view>
   </view>
 </view>
-<view wx:for="{{userOb1}}">
-{{item}}
+<view class="content" wx:for="{{userHistory}}">
+  <view class="">{{item.year}}</view>
+  <view class="">{{item.month}}</view>
+  <view class="">{{item.day}}</view>
+  <view>{{item.content}}</view>
+  <image src="{{item.mood}}" />
 </view>

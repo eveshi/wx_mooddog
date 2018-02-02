@@ -3,18 +3,18 @@
 
 var app = getApp();
 const imageLink = [
-  "images/verySad.png",
-  "images/sad.png",
-  "images/calm.png",
-  "images/happy.png",
-  "images/veryHappy.png"
+  "../../../images/verySad.png",
+  "../../../images/sad.png",
+  "../../../images/calm.png",
+  "../../../images/happy.png",
+  "../../../images/veryHappy.png"
 ]
 var i = 2;
 
 Page({
   data:{
     question: '汪汪~告诉我你现在的心情吧',
-    answer: 'images/calm.png',
+    answer: '../../../images/calm.png',
     quickSave: '快速保存',
     moreDetails: '详细记录',
   },

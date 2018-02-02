@@ -8,7 +8,8 @@
     "pages/logs/logs",
     "pages/input/moodName/moodName",
     "pages/history/history",
-    "pages/input/example/example"
+    "pages/input/example/example",
+    "pages/history/hisDe/hisDe"
   ],
   "window": {
     "backgroundTextStyle": "light",
