@@ -1,4 +1,15 @@
 <!--pages/history/history.wxml-->
+<view class="mainpage">
+  <view class="head">
+    <checkbox-group class="moodFilter">
+      <label class="checkbox" wx:for="{{filter}}">
+        <checkbox value="{{filter.name}}" checked="{{filter.checked}}">
+          {{filter.value}}
+        </checkbox>
+      </label>
+    </checkbox-group>
+  </view>
+</view>
 <view wx:for="{{userOb1}}">
 {{item}}
 </view>

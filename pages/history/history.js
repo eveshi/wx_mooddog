@@ -7,6 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    filter: [
+      { name: "all", value: "全部", checked: "true" },
+      { name: "4", value: "好开心", checked: "false" },
+      { name: "3", value: "开心", checked: "false" },
+      { name: "2", value: "一般", checked: "false" },
+      { name: "1", value: "不开心", checked: "false" },
+      { name: "0", value: "好不开心", checked: "false" },
+    ],
     userOb1: "asd",
   },
 
@@ -17,7 +25,7 @@ Page({
 
     let userInfo = wx.BaaS.storage.get('userinfo')
     // wx.showLoading({
-    //   title: '狗粮进食中~',
+    //   title: '二狗努力中~',
     //   mask: true
     // })
     // 尝试获取用户信息，若获取失败，则使用 wx.BaaS.login 进行登录
@@ -55,9 +63,16 @@ Page({
     var Product = new wx.BaaS.TableObject(tableID)
     Product.setQuery(query).find().then((res) => {
       var userData = res.data
+      var objectLen = userData['objects'].length
+      var cont = []
       console.log(userData)
+      console.log(objectLen)
+      for(var i=0; i<objectLen; i++){
+        cont.push(userData['objects'][i].content)
+      }
+      console.log(cont)
       this.setData({
-        userOb1: userData['objects'][0]
+        userOb1: cont
       })
     }, (err) => {
       // err

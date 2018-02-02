@@ -19,7 +19,6 @@ Page({
     this.setData({
       inputValue: e.detail.value
     })
-    console.log(this.data.inputValue)
   },
 
   savemode: function () {

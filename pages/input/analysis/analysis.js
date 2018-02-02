@@ -59,7 +59,6 @@ Page({
           index: test
         })
       }
-    console.log(this.data.index)
     }
   },
 
@@ -69,7 +68,6 @@ Page({
     for(var i=0;i<6;i++){
       if(id==test[i].id){
         test[i].value = e.detail.value
-        console.log(test[i].value)
         this.setData({
           inValue: test
         })
