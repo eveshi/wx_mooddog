@@ -1,13 +1,12 @@
 <!--pages/history/history.wxml-->
 <view class="mainpage">
   <view class="head">
-    <checkbox-group class="moodFilter">
-      <label class="checkbox" wx:for="{{filter}}">
-        <checkbox value="{{filter.name}}" checked="{{filter.checked}}">
-          {{filter.value}}
-        </checkbox>
-      </label>
-    </checkbox-group>
+    <view class="moodFilter">
+      <picker bindchange="moodChange" range="{{filter}}" range-key="{{'value'}}" value="{{filter[index].name}}">
+        <view>汪汪过滤器：▼ {{filter[index].value}} ▼</view>
+      </picker>
+    </view>
+    <view class="search"></view>
   </view>
 </view>
 <view wx:for="{{userOb1}}">

@@ -1,1 +1,16 @@
 /* pages/history/history.wxss */
+
+.head{
+  height: 24px;
+  background-color: #8A976A;
+  display: flex;
+  justify-content: center;
+}
+
+.moodFilter{
+  /* width: 120px; */
+  text-align: center;
+  color: #FEFEFD;
+  /* border: 3px solid #72523d;
+  border-radius: 10px; */
+}

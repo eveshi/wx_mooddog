@@ -8,14 +8,21 @@ Page({
    */
   data: {
     filter: [
-      { name: "all", value: "全部", checked: "true" },
-      { name: "4", value: "好开心", checked: "false" },
-      { name: "3", value: "开心", checked: "false" },
-      { name: "2", value: "一般", checked: "false" },
-      { name: "1", value: "不开心", checked: "false" },
-      { name: "0", value: "好不开心", checked: "false" },
+      { name: "all", value: "全部"},
+      { name: "4", value: "好开心"},
+      { name: "3", value: "开心"},
+      { name: "2", value: "一般"},
+      { name: "1", value: "不开心" },
+      { name: "0", value: "好不开心"},
     ],
+    index: 0,
     userOb1: "asd",
+  },
+
+  moodChange: function(e){
+    this.setData({
+      index: e.detail.value
+    })
   },
 
   /**
