@@ -27,7 +27,7 @@ Page({
     let Product = new wx.BaaS.TableObject(tableID)
     let product = Product.create()
 
-    product.set('moodSave', parseInt(this.data.mood))
+    product.set('moodSave', parseInt(app.global.mood))
     product.set('content', this.data.inputValue)
 
     product.save().then((res) => {
@@ -50,10 +50,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.setData({
-      mood: options.id
-    })
-    console.log(this.data.mood)
+
   },
 
 })

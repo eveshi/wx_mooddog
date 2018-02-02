@@ -1,15 +1,24 @@
 /* pages/history/history.wxss */
 
 .head{
+  position: fixed;
+  width: 100vw;
   height: 24px;
   background-color: #8A976A;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
 .moodFilter{
   text-align: center;
   color: #FEFEFD;
+}
+
+.text{
+  position: absolute;
+  margin-top: 24px;
+  z-index: 0;
 }
 
 .content{

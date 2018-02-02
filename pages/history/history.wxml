@@ -8,10 +8,14 @@
     </view>
   </view>
 </view>
-<view class="content" wx:for="{{userHistory}}">
-  <view class="">{{item.year}}</view>
-  <view class="">{{item.month}}</view>
-  <view class="">{{item.day}}</view>
-  <view>{{item.content}}</view>
-  <image src="{{item.mood}}" />
+<view class="text">
+  <view class="content" wx:for="{{userHistory}}">
+  <!-- 用首年到末年的循环来套？ -->
+  <!-- 月份的话就是直接1到12月的循环就好了？ -->
+    <view class="">{{item.year}}</view>
+    <view class="">{{item.month}}</view>
+    <view class="">{{item.day}}</view>
+    <view>{{item.content}}</view>
+    <image class="mood" src="{{item.mood}}" />
+  </view>
 </view>

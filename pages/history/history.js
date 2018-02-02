@@ -84,6 +84,7 @@ Page({
       var date
       console.log(userData)
       console.log(objectLen)
+      // 创建新数组
       for(var i=0; i<objectLen; i++){
         date = new Date(userData['objects'][i].created_at*1000)
         historySingle.year = date.getFullYear()
@@ -95,9 +96,34 @@ Page({
         history.push(historySingle)
         historySingle = { year: "", month: "", day: "", content: "", mood: "" }
       }
-      console.log(history)
+      // 筛选出年份和月份
+      var yL = history[history.length-1].year
+      var yH = history[0].year
+      var newArray = []
+      var newCut
+      var flag
+      for(;yH>yL-1;yH--){
+        flag = false 
+        for(var i=0; i<history.length; i++){
+          if(history[i].year == yL){
+            for(var a=1; a<13; a++){
+              if(history[i].month == a){
+                newCut = { day: "", content: "", mood: "" }
+                if(flag == false){
+                  newArray.push({ year: yL, month: a })
+                  flag = true
+                }
+                newCut.day = history[i].day
+                newCut.content = history[i].content
+                newCut.mood = history[i].mood
+                newArray.push(newCut)
+              }
+            }
+          }
+        }
+      }
       this.setData({
-        userHistory: history
+        userHistory: newArray
       })
     }, (err) => {
       // err
