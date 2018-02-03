@@ -11,6 +11,7 @@
 }
 
 .moodFilter{
+  font-size: 16px;
   text-align: center;
   color: #FEFEFD;
 }
@@ -22,9 +23,55 @@
 }
 
 .content{
-  font-size: 14px;
   height: 48px;
   margin: auto 5vw;
+  padding: auto;
   width: 90vw;
   border-bottom: 1px dotted #8A976A;
+  display: flex;
+  justify-content: space-around
+}
+
+.time{
+  margin-top: 5px;
+  width: 100vw;
+}
+
+.bigTime{
+  color: #FEFEFD;
+  margin: auto;
+  padding: auto;
+  height: 30px;
+  width: 160px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #72523d;
+  border-radius: 10px;
+  background-color: #72523d;
+}
+
+.day{
+  color: #72523d;
+  font-weight: bold;
+  height: 24px;
+  width: 15vw;
+  margin: auto;
+  font-size: 20px;
+}
+
+.textCon{
+  height: 20px;
+  width: 55vw;
+  margin: auto;
+  padding: auto;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mood{
+  margin: auto;
+  height: 40px;
+  width: 15vw;
 }

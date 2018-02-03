@@ -9,13 +9,16 @@
   </view>
 </view>
 <view class="text">
-  <view class="content" wx:for="{{userHistory}}">
+  <view wx:for="{{userHistory}}">
   <!-- 用首年到末年的循环来套？ -->
   <!-- 月份的话就是直接1到12月的循环就好了？ -->
-    <view class="">{{item.year}}</view>
-    <view class="">{{item.month}}</view>
-    <view class="">{{item.day}}</view>
-    <view>{{item.content}}</view>
-    <image class="mood" src="{{item.mood}}" />
+    <view class="time">
+      <view class="bigTime" wx:if="{{item.show}}">{{item.month}}{{item.year}}</view>
+    </view>
+    <view class="content" style="{{item.moodShow=='true'?'':'display:none'}}">
+      <view bindtap="details" data-_id="{{item._id}}" class="day">{{item.day}}</view>
+      <view bindtap="details" data-_id="{{item._id}}" class="textCon">{{item.content}}</view>
+      <image bindtap="details" data-_id="{{item._id}}" class="mood" mode="aspectFit" src="{{item.moodImg}}" />
+    </view>
   </view>
 </view>

@@ -1,2 +1,7 @@
 <!--pages/history/hisDe/hisDe.wxml-->
-<text>pages/history/hisDe/hisDe.wxml</text>
+<view class="head">
+  <view class="time">
+    {{contData.year}}{{contData.month}}{{contData.day}}  {{contData.hour}}:{{contData.min}}:{{contData.sec}}
+  </view>
+</view>
+<view class="mainPage"></view>
