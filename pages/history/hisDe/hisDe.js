@@ -7,12 +7,31 @@ const imageLink = [
   "../../../images/happy.png",
   "../../../images/veryHappy.png"
 ]
+const items = [
+  { id: 0, name: '请选择' },
+  { id: 1, name: '仅是指责' },
+  { id: 2, name: '全都是和全不是' }
+  // { name: 'Cata', value: '悲观夸大' },
+  // { name: 'DownP', value: '无视积极面' },
+  // { name: 'EmoRea', value: '仅靠感觉判断' },
+  // { name: 'ForTell', value: '悲观预测' },
+  // { name: 'IoUn', value: '总是不确定' },
+  // { name: 'Lab', value: '贴标签' },
+  // { name: 'MinRe', value: '读心' },
+  // { name: 'NegFil', value: '不看整体' },
+  // { name: 'NotA', value: '持续不接受' },
+  // { name: 'Over', value: '极端总结' },
+  // { name: 'Per', value: '只怪自己' },
+  // { name: 'ShoAM', value: '套用自己标准给他人' },
+  // { name: 'No', value: '都不适用' },
+]
 
 Page({
 
   data: {
     id: 0,
-    contData: {},
+    timeData: {},
+    tgtChange: [],
   },
 
   /**
@@ -32,7 +51,9 @@ Page({
     var Product = new wx.BaaS.TableObject(tableID)
     Product.setQuery(query).find().then((res) => {
       var userData = res.data['objects'][0]
+      console.log(userData)
       var newRow = {}
+      var newTgt = [{},{},{}]
       var date = new Date(userData.created_at*1000)
       newRow.year = date.getFullYear()
       newRow.month = date.getMonth()+"月"
@@ -40,21 +61,52 @@ Page({
       newRow.hour = date.getHours()
       newRow.min = date.getMinutes()
       newRow.sec = date.getSeconds()
+      console.log(newRow)
       newRow.mood = imageLink[userData.moodSave]
-      newRow.content = userData.content
-      newRow.tgts1 = userData.tgts1
-      newRow.tgts1Change = userData.tgts1Change
-      newRow.tgts1TrapId = userData.tgts1TrapId
-      newRow.tgts2 = userData.tgts2
-      newRow.tgts2Change = userData.tgts2Change
-      newRow.tgts2TrapId = userData.tgts2TrapId
-      newRow.tgts3 = userData.tgts3
-      newRow.tgts3Change = userData.tgts3Change
-      newRow.tgts3TrapId = userData.tgts3TrapId
+      console.log(newRow)
+      if(userData.content != ""){
+        newRow.content = userData.content        
+      }
+      else{
+        newRow.content = "汪~这里没有内容哦~"
+      }
+      console.log(newRow)
+      newTgt[0].tgts = userData.tgts1
+      console.log(newTgt)
+      newTgt[0].tgtsChange = userData.tgts1Change
+      newTgt[0].tgtsTrapId = items[userData.tgts1TrapId].name
+      newTgt[1].tgts = userData.tgts2
+      newTgt[1].tgtsChange = userData.tgts2Change
+      newTgt[1].tgtsTrapId = items[userData.tgts2TrapId].name
+      newTgt[2].tgts = userData.tgts3
+      newTgt[2].tgtsChange = userData.tgts3Change
+      newTgt[2].tgtsTrapId = items[userData.tgts3TrapId].name
+      for(var i=0; i<3; i++){
+        console.log(i)
+        if(newTgt[i].tgts==""&&newTgt[i].tgtsChange==""&&newTgt[i].tgtsTrapId=="请选择"){
+          newTgt[i].show = "false"
+        }
+        else{
+          newTgt[i].show = "true"
+        }
+      }
+      console.log(newTgt)
+      if (newTgt[i].tgts == "") {
+        newTgt[i].tgts = "汪~没有填写内容哦"
+      }
+      if (newTgt[i].tgtsChange == "") {
+        newTgt[i].tgtsChange = "汪~没有填写内容哦"
+      }
+      if (newTgtsTrapId == "请选择") {
+        newTgt[i].tgtsTrapId = "汪~没有选择思维陷阱~"
+      }
+      console.log(newTgt)
       this.setData({
-        contData: newRow
+        timeData: newRow,
+        tgtChange: newTgt
       })
-      console.log(this.data.contData)
+      console.log(this.data.timeData)
+      console.log(this.data.tgtChange)
     }, (err) => {
       // err
     })

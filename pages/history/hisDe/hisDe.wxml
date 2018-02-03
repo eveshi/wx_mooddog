@@ -1,7 +1,25 @@
 <!--pages/history/hisDe/hisDe.wxml-->
 <view class="head">
   <view class="time">
-    {{contData.year}}{{contData.month}}{{contData.day}}  {{contData.hour}}:{{contData.min}}:{{contData.sec}}
+    {{timeData.year}}-{{timeData.month}}-{{timeData.day}}  {{timeData.hour}}:{{timeData.min}}:{{timeData.sec}}
+  </view>
+  <!-- <image class="delete" mode="aspectFit" src="../../../images/delete.png" />  -->
+</view>
+<view class="mainPage">
+  <view class="cont">
+    <view class="mood">
+      <view class="moodText">情绪：</view>
+      <image class="moodPic" mode="aspectFit" src="{{timeData.mood}}" />  
+    </view>
+    <view class="content">
+      {{timeData.content}}
+    </view>
+  </view>
+  <view class="tgt" wx:for="{{tgtChange}}" wx:if="{{item.show}}">
+    <view class="tgtText">{{item.tgts}}</view>
+    <view class="tgtTrap">{{item.tgtsTrapId}}</view>
+    <view class="tgtText">{{item.tgtsChange}}</view>
   </view>
 </view>
-<view class="mainPage"></view>
+
+<view class="delete"></view>

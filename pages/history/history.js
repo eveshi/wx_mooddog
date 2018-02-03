@@ -163,7 +163,6 @@ Page({
         history.push(historySingle)
         historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
       }
-      console.log(history)
       // 筛选出年份和月份
       var yH = history[history.length-1].year
       var yL = history[0].year
@@ -176,7 +175,6 @@ Page({
           flag = false
           for(var i=history.length-1; i>-1; i--){
             if(history[i].month == a){
-              console.log(history[i].month)
               newCut = { year:0, month: 0, day: "", content: "", mood: 0, moodImg: "", _id: "", moodShow: "true" }
               if (flag == false) {
                 newArray.push({ year: yH, month: a + "月  ", show: "true" })
@@ -194,7 +192,6 @@ Page({
           }
         }
       }
-      console.log(newArray)
       this.setData({
         userHistoryModel: newArray,
         userHistory: newArray

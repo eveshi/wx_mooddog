@@ -1,1 +1,96 @@
 /* pages/history/hisDe/hisDe.wxss */
+.head{
+  position: fixed;
+  width: 100vw;
+  height: 24px;
+  background-color: #8A976A;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.time{
+  color: #FEFEFD;
+  font-weight: bold;
+  height: 24px;
+  width: 100vw;
+  text-align: center;
+}
+
+.mainPage{
+  position: absolute;
+  margin-top: 24px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont{
+  width: 90vw;
+  margin: 10px 5vw;
+  border: 3px solid #72523d;
+  border-radius: 10px;
+}
+
+.mood{
+  height: 48px;
+  width: 80vw;
+  margin: 0 5vw;
+  border-bottom: 1px dotted #72523d;
+  display: flex;
+  justify-content: center;
+}
+
+.moodText{
+  margin-top: 18px;
+  margin-right: 0;
+  padding-right: 0;
+  height: 25px;
+  font-size: 16px;
+  width: 20vw;
+}
+
+.moodPic{
+  margin-top: 14px;
+  margin-left: 0;
+  width: 10vw;
+  height: 30px;
+}
+
+.content{
+  margin: 10px auto;
+  width: 90vw;
+  text-align: center;
+}
+
+.tgt{
+  margin: 5vw;
+  padding: 20rpx; 
+  height: 50vh;
+  border-left: 5px solid #8A976A;
+  background-color: #E6E7CE;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);
+  border-radius: 10rpx;
+}
+
+.tgtText{
+  margin-top: 15rpx;
+  padding: 20rpx;
+  height: 15vh;
+  width: 78vw;
+  color: #8A976A;
+  background-color: #FEFEFD;
+  border-radius: 7rpx; 
+}
+
+.tgtTrap{
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+/* .delete{
+  height: 18px;
+  position: absolute;
+  margin-left: 90vw;
+  margin-top: 3px;
+} */
