@@ -1,11 +1,11 @@
 // pages/history/history.js
 var app = getApp()
 const imageLink = [
-  "../../../images/verySad.png",
-  "../../../images/sad.png",
-  "../../../images/calm.png",
-  "../../../images/happy.png",
-  "../../../images/veryHappy.png"
+  "../../images/verySad.png",
+  "../../images/sad.png",
+  "../../images/calm.png",
+  "../../images/happy.png",
+  "../../images/veryHappy.png"
 ]
 
 Page({

@@ -88,6 +88,18 @@
   text-align: center;
 }
 
+.delete{
+  position: fixed;
+  z-index: 2;
+  top: 90vh;
+  right: 7vw;
+}
+
+.delPic{
+  height: 36px;
+  width: 36px;
+}
+
 /* .delete{
   height: 18px;
   position: absolute;

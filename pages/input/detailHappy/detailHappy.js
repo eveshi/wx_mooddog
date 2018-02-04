@@ -27,7 +27,7 @@ Page({
     let Product = new wx.BaaS.TableObject(tableID)
     let product = Product.create()
 
-    product.set('moodSave', parseInt(app.global.mood))
+    product.set('moodSave', parseInt(app.globalData.mood))
     product.set('content', this.data.inputValue)
 
     product.save().then((res) => {

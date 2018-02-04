@@ -3,7 +3,6 @@
   <view class="time">
     {{timeData.year}}-{{timeData.month}}-{{timeData.day}}  {{timeData.hour}}:{{timeData.min}}:{{timeData.sec}}
   </view>
-  <!-- <image class="delete" mode="aspectFit" src="../../../images/delete.png" />  -->
 </view>
 <view class="mainPage">
   <view class="cont">
@@ -15,11 +14,13 @@
       {{timeData.content}}
     </view>
   </view>
-  <view class="tgt" wx:for="{{tgtChange}}" wx:if="{{item.show}}">
+  <view class="tgt" wx:for="{{tgtChange}}" style="{{item.show=='true'?'':'display:none'}}">
     <view class="tgtText">{{item.tgts}}</view>
     <view class="tgtTrap">{{item.tgtsTrapId}}</view>
     <view class="tgtText">{{item.tgtsChange}}</view>
   </view>
 </view>
 
-<view class="delete"></view>
+<view class="delete" bindtap="deleteCon">
+ <image class="delPic" mode="aspectFit" src="../../../images/delete.png" />
+</view>

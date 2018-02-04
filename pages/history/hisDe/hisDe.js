@@ -34,6 +34,33 @@ Page({
     tgtChange: [],
   },
 
+  deleteCon: function(){
+    let tableID = 21194
+    var id = this.data.timeData.id
+
+    let Product = new wx.BaaS.TableObject(tableID)
+    Product.delete(id).then((res) => {
+      // success
+      console.log("success")
+      wx.showModal({
+        content: '删除成功！',
+        showCancel: false,
+        confirmColor: "#8A976A",
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.reLaunch({
+              url: '../history',
+            })
+          } else {
+          }
+        }
+      })
+    }, (err) => {
+      // err
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,52 +88,94 @@ Page({
       newRow.hour = date.getHours()
       newRow.min = date.getMinutes()
       newRow.sec = date.getSeconds()
-      console.log(newRow)
+      newRow.id = userData._id
       newRow.mood = imageLink[userData.moodSave]
-      console.log(newRow)
+
       if(userData.content != ""){
         newRow.content = userData.content        
       }
       else{
         newRow.content = "汪~这里没有内容哦~"
       }
-      console.log(newRow)
-      newTgt[0].tgts = userData.tgts1
-      console.log(newTgt)
-      newTgt[0].tgtsChange = userData.tgts1Change
-      newTgt[0].tgtsTrapId = items[userData.tgts1TrapId].name
-      newTgt[1].tgts = userData.tgts2
-      newTgt[1].tgtsChange = userData.tgts2Change
-      newTgt[1].tgtsTrapId = items[userData.tgts2TrapId].name
-      newTgt[2].tgts = userData.tgts3
-      newTgt[2].tgtsChange = userData.tgts3Change
-      newTgt[2].tgtsTrapId = items[userData.tgts3TrapId].name
+
+      if(userData.tgts1){
+        newTgt[0].tgts = userData.tgts1
+      }
+      else{
+        newTgt[0].tgts = ""
+      }
+      if (userData.tgts1Change) {
+        newTgt[0].tgtsChange = userData.tgts1Change
+      }
+      else {
+        newTgt[0].tgtsChange = ""
+      }
+      if (userData.tgts2) {
+        newTgt[1].tgts = userData.tgts2
+      }
+      else {
+        newTgt[1].tgts = ""
+      }
+      if (userData.tgts2Change) {
+        newTgt[1].tgtsChange = userData.tgts1
+      }
+      else {
+        newTgt[1].tgtsChange = ""
+      }
+      if (userData.tgts3) {
+        newTgt[2].tgts = userData.tgts3
+      }
+      else {
+        newTgt[2].tgts = ""
+      }
+      if (userData.tgts3Change) {
+        newTgt[2].tgtsChange = userData.tgts3Change
+      }
+      else {
+        newTgt[2].tgtsChange = ""
+      }
+      if (userData.tgts1TrapId) {
+        newTgt[0].tgtsTrapId = items[userData.tgts1TrapId].name
+      }
+      else {
+        newTgt[0].tgtsTrapId = "请选择"
+      }
+      if (userData.tgts2TrapId) {
+        newTgt[1].tgtsTrapId = items[userData.tgts2TrapId].name
+      }
+      else {
+        newTgt[1].tgtsTrapId = "请选择"
+      }
+      if (userData.tgts3TrapId) {
+        newTgt[2].tgtsTrapId = items[userData.tgts3TrapId].name
+      }
+      else {
+        newTgt[2].tgtsTrapId = "请选择"
+      }
+      
       for(var i=0; i<3; i++){
-        console.log(i)
         if(newTgt[i].tgts==""&&newTgt[i].tgtsChange==""&&newTgt[i].tgtsTrapId=="请选择"){
           newTgt[i].show = "false"
         }
         else{
           newTgt[i].show = "true"
+
+          if (newTgt[i].tgts == "") {
+            newTgt[i].tgts = "汪~没有填写内容哦"
+          }
+          if (newTgt[i].tgtsChange == "") {
+            newTgt[i].tgtsChange = "汪~没有填写内容哦"
+          }
+          if (newTgt[i].tgtsTrapId == "请选择") {
+            newTgt[i].tgtsTrapId = "汪~没有选择思维陷阱~"
+          }
         }
       }
-      console.log(newTgt)
-      if (newTgt[i].tgts == "") {
-        newTgt[i].tgts = "汪~没有填写内容哦"
-      }
-      if (newTgt[i].tgtsChange == "") {
-        newTgt[i].tgtsChange = "汪~没有填写内容哦"
-      }
-      if (newTgtsTrapId == "请选择") {
-        newTgt[i].tgtsTrapId = "汪~没有选择思维陷阱~"
-      }
-      console.log(newTgt)
+ 
       this.setData({
         timeData: newRow,
         tgtChange: newTgt
       })
-      console.log(this.data.timeData)
-      console.log(this.data.tgtChange)
     }, (err) => {
       // err
     })

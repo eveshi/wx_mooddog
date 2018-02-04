@@ -9,7 +9,8 @@
     "pages/input/moodName/moodName",
     "pages/history/history",
     "pages/input/example/example",
-    "pages/history/hisDe/hisDe"
+    "pages/history/hisDe/hisDe",
+    "pages/dataAna/dataAna"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,7 +40,7 @@
         "text": "数据",
         "iconPath": "images/data.png",
         "selectedIconPath": "images/data1.png",
-        "pagePath": "pages/logs/logs"
+        "pagePath": "pages/dataAna/dataAna"
       }
     ]
   }
