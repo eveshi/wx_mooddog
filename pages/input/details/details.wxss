@@ -29,6 +29,15 @@
   width: 86vw;
 }
 
+.count{
+  position: fixed;
+  top: 65vh;
+  right: 10vw;
+  font-size: 14px;
+  color: #8A976A;
+  text-shadow: -0.5px -0.5px white, 0.5px 0.5px #333;
+}
+
 .saveMode{
   display: flex;
   justify-content: space-around;

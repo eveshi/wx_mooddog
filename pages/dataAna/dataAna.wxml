@@ -1,2 +1,18 @@
 <!--pages/dataAna/dataAna.wxml-->
-<text>pages/dataAna/dataAna.wxml</text>
+<view class="head">
+  <view wx:for="{{buttonName}}">
+    <button class="{{item.choose=='true'?'buttonChoose':'button'}}" bindtap="changeCharts">{{item.name}}</button>
+  </view>
+</view>
+ 
+<view class="charts">
+  <canvas class="canvas" canvas-id="basePie" />
+</view>
+
+<view class="general">
+  <view wx:for="{{moodData}}">
+    <view class="generalText">
+    你的<view class="highlight" style="color:{{item.color}}"> {{item.label}} </view>有<view class="highlight" style="color:{{item.color}}"> {{item.value}} </view>条，占所有记录的<view class="highlight" style="color:{{item.color}}"> {{item.percent}} </view>。
+    </view>
+  </view>
+</view>

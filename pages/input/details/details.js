@@ -10,11 +10,14 @@ Page({
     inputValue: "",
     quickSave: "保存",
     analysisThen: "分析",
+    count: 0,
   },
 
   diary: function (e) {
+    var cot = e.detail.value.length
     this.setData({
-      inputValue: e.detail.value
+      inputValue: e.detail.value,
+      count: cot
     })
   },
 

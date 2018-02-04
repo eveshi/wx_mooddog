@@ -5,10 +5,11 @@
       <view class="contentTitle">{{title}}</view>
       <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
     </view>
-    <view>
-      <textarea class="content" type="text" placeholder="{{contentHolder}}" bindinput="diary" auto-focus/>
-    </view>
-  </view>
+    <view> 
+      <textarea class="content" type="text" placeholder="{{contentHolder}}" bindinput="diary" maxlength='1200' auto-focus/>
+    </view>      
+  </view> 
+  <view class="count">{{count}}/1200</view>
   <view class="saveMode">
       <button class="next" bindtap='savemode'>{{quickSave}}</button>
       <button class="next" bindtap='nextPage'>{{analysisThen}}</button>

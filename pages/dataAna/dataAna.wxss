@@ -1,1 +1,58 @@
 /* pages/dataAna/dataAna.wxss */
+.head{
+  margin-top: 10px;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buttonChoose{
+  width: 20vw;
+  height: 30px;
+  background-color: #72523d;
+  color: #FEFEFD;
+  border-radius: 5px; 
+  font-size: 14px;
+}
+
+.button{
+  width: 20vw;
+  height: 30px;
+  background-color: #FEFEFD;
+  color: #72523d;
+  border-radius: 5px; 
+  font-size: 14px;
+}
+
+.charts{
+  height: 55vh;
+}
+
+.canvas{
+  height: 300px;
+  width: 100vw;
+  position: abusolute;
+  left: -5%;
+  top: -5%;
+}
+
+.general{
+  
+}
+
+.generalText{
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.highlight{
+  font-size: 20px;
+  font-weight: 900;
+  margin: auto 4px;
+  -webkit-text-stroke: 0.5px #000000;
+}
