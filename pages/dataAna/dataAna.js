@@ -1,21 +1,134 @@
 // pages/dataAna/dataAna.js
 let app = getApp()
+var moodBase = [
+  { label: "好不开心", value: 0, color: "#588C73" },
+  { label: "不开心", value: 0, color: "#77AF9C" },
+  { label: "心情一般", value: 0, color: "#F2E394" },
+  { label: "开心", value: 0, color: "#F2AE72" },
+  { label: "好开心", value: 0, color: "#D96459" },
+]
+let WxChart = require("../../utils/wx-chart.js");
+
+let basePie = (windowWidth,pa) => {
+
+  let wxPie = new WxChart.WxDoughnut('basePie', {
+    width: windowWidth,
+    height: 350,
+    // point:{
+    //   format: percentageFormatLabel
+    // },
+    color: {
+      luminosity: "dark",
+      hue: "orange"
+    }
+  });
+
+  wxPie.update(pa);
+  return {
+    chart: wxPie,
+    redraw: (pa) => {
+      wxPie.update(pa);
+    }
+  };
+};
 
 Page({
 
   data: {
   moodData: [],
+  moodDataAll: [],
   buttonName: [
-    {name:"全部", choose:"true"},
-    {name: "1年", choose: "false" },
-    {name: "30天", choose: "false" },
-    {name: "7天", choose: "false" },
-  ]
+    {id:0, name:"全部", choose:"true"},
+    {id:1, name: "90天", choose: "false" },
+    {id:2, name: "30天", choose: "false" },
+    {id:3, name: "7天", choose: "false" },
+  ],
+  show: "false",
+  width: 320
   },
 
-  detail: function(e){
-    console.log(e.detail)
-    console.log(e.target)
+  changeCharts: function(e){
+    console.log(e.target.dataset.id)
+    var id = e.target.dataset.id
+    var date = ((new Date()).getTime()/1000).toFixed(0)
+    var button = [
+      { id: 0, name: "全部", choose: "true" },
+      { id: 1, name: "90天", choose: "false" },
+      { id: 2, name: "30天", choose: "false" },
+      { id: 3, name: "7天", choose: "false" },
+    ]
+    for(var i=0;i<4;i++){
+      if(id == i){
+        button[i].choose = "true"
+      }else{
+        button[i].choose = "false"
+      }
+    }
+    this.setData({
+      buttonName: button
+    })
+    var all = this.data.moodDataAll
+    var mood = [
+      { label: "好不开心", value: 0, color: "#588C73" },
+      { label: "不开心", value: 0, color: "#77AF9C" },
+      { label: "心情一般", value: 0, color: "#F2E394" },
+      { label: "开心", value: 0, color: "#F2AE72" },
+      { label: "好开心", value: 0, color: "#D96459" },
+    ]
+    var newDate
+    if(id==0){
+      for(var a=0;a<all.length;a++){
+        for(var b=0;b<4;b++){
+          if(all[a].mood==b){
+            mood[b].value += 1
+          }
+        }
+      }
+    }else if(id==1){
+      newDate = date-2592000*3
+      for (var a = 0; a < all.length; a++) {
+        if(all[a].date > newDate){
+          for (var b = 0; b < 4; b++) {
+            if (all[a].mood == b) {
+              mood[b].value += 1
+            }
+          }
+        }
+      }
+    }else if(id==2){
+      newDate = date - 2592000
+      for (var a = 0; a < all.length; a++) {
+        if (all[a].date > newDate) {
+          for (var b = 0; b < 4; b++) {
+            if (all[a].mood == b) {
+              mood[b].value += 1
+            }
+          }
+        }
+      }
+    }else if(id==3){
+      newDate = date - 604800
+      for (var a = 0; a < all.length; a++) {
+        if (all[a].date > newDate) {
+          for (var b = 0; b < 4; b++) {
+            if (all[a].mood == b) {
+              mood[b].value += 1
+            }
+          }
+        }
+      }
+    }
+    var totalValue = 0
+    for (var b = 0; b < 5; b++) {
+      totalValue += mood[b].value
+    }
+    for (var c = 0; c < 5; c++) {
+      mood[c].percent = ((mood[c].value / totalValue) * 100).toFixed(0) + '%'
+    }
+    this.setData({
+      moodData: mood
+    })
+    this.basePieChart = basePie(this.data.width,mood);
   },
 
   /**
@@ -56,22 +169,17 @@ Page({
     Product.setQuery(query).find().then((res) => {
       var userData = res.data
       var objectLen = userData['objects'].length
+      if(objectLen != 0){
+        this.setData({
+          show: "true"
+        })
+      }
       var historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
       var history = []
-      var date
-      var mood = [
-      { label: "好不开心", value: 0, color:"#588C73" },
-      { label: "不开心", value: 0, color:"#77AF9C" },
-      { label: "心情一般", value: 0, color:"#F2E394" },
-      { label: "开心", value: 0, color:"#F2AE72" },
-      { label: "好开心", value: 0, color:"#D96459" },
-      ]
+      var mood = moodBase
       // 创建新数组
       for (var i = 0; i < objectLen; i++) {
-        date = new Date(userData['objects'][i].created_at * 1000)
-        historySingle.year = date.getFullYear()
-        historySingle.month = date.getMonth() + 1
-        historySingle.day = date.getDate()
+        historySingle.date = userData['objects'][i].created_at
         historySingle.mood = userData['objects'][i].moodSave
         for(var a = 0; a<5; a++){
           if(historySingle.mood == a){
@@ -79,7 +187,7 @@ Page({
           }
         }
         history.push(historySingle)
-        historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
+        historySingle = { date: 0, mood: 0,}
       }
       //output percentage of value
       var totalValue = 0
@@ -90,68 +198,12 @@ Page({
         mood[c].percent = ((mood[c].value/totalValue)*100).toFixed(0)+'%'
       }
 
-
-      // 筛选出年份和月份
-      var yH = history[history.length - 1].year
-      var yL = history[0].year
-      var newArray = []
-      var newCut
-      var flag
-      for (; yH > yL - 1; yH--) {
-        console.log(yH)
-        for (var a = 12; a > 0; a--) {
-          flag = false
-          for (var i = history.length - 1; i > -1; i--) {
-            if (history[i].month == a) {
-              newCut = { year: 0, month: 0, day: "", content: "", mood: 0, moodImg: "", _id: "", moodShow: "true" }
-              if (flag == false) {
-                newArray.push({ year: yH, month: a + "月  ", show: "true" })
-                flag = true
-              }
-              newCut.year = history[i].year
-              newCut.month = history[i].month
-              newCut.day = history[i].day + "号"
-              newCut.content = history[i].content
-              newCut.mood = history[i].mood
-              newCut.moodImg = history[i].moodImg
-              newCut._id = history[i]._id
-              newArray.push(newCut)
-            }
-          }
-        }
-      }
-
       this.setData({
-        moodData: mood
+        moodData: mood,
+        moodDataAll: history
       })
 
 //饼图初始化
-      let WxChart = require("../../utils/wx-chart.js");
-      let getChartInstances = WxChart.getChartInstances;
-
-      let basePie = windowWidth => {
-
-        let wxPie = new WxChart.WxDoughnut('basePie', {
-          width: windowWidth,
-          height: 350,
-          // point:{
-          //   format: percentageFormatLabel
-          // },
-          color:{
-            luminosity: "dark",
-            hue: "orange"
-          }          
-        });
-
-        wxPie.update(mood);
-        return {
-          chart: wxPie,
-          redraw: () => {
-            wxPie.update(mood);
-          }
-        };
-      };
-
       let windowWidth = 320
       try {
         let res = wx.getSystemInfoSync();
@@ -159,9 +211,10 @@ Page({
       } catch (e) {
         // do something when get system info failed
       }
-      console.log(windowWidth)
-
-      this.basePieChart = basePie(windowWidth);
+      this.setData({
+        width: windowWidth
+      })
+      this.basePieChart = basePie(windowWidth,mood);
     }, (err) => {
       // err
     })

@@ -12,12 +12,15 @@ Page({
     inputValue: "",
     quickSave: "全部保存",
     analysisThen: "分析",
-    mood: 2
+    mood: 2,
+    count: 0
   },
 
   diary: function (e) {
+    var cot = e.detail.value.length
     this.setData({
-      inputValue: e.detail.value
+      inputValue: e.detail.value,
+      count: cot
     })
   },
 

@@ -33,7 +33,6 @@
   height: 300px;
   width: 100vw;
   position: abusolute;
-  left: -5%;
   top: -5%;
 }
 
@@ -55,4 +54,11 @@
   font-weight: 900;
   margin: auto 4px;
   -webkit-text-stroke: 0.5px #000000;
+}
+
+.noplay{
+  text-align: center;
+  width: 100vw;
+  height: 100vw;
+  color: #72523d;
 }
