@@ -119,16 +119,20 @@ Page({
       }
     }
     var totalValue = 0
+    var newMood = []
     for (var b = 0; b < 5; b++) {
+      if (mood[b].value != 0) {
+        newMood.push(mood[b])
+      }
       totalValue += mood[b].value
     }
-    for (var c = 0; c < 5; c++) {
-      mood[c].percent = ((mood[c].value / totalValue) * 100).toFixed(0) + '%'
+    for (var c = 0; c < newMood.length; c++) {
+      newMood[c].percent = ((newMood[c].value / totalValue) * 100).toFixed(0) + '%'
     }
     this.setData({
-      moodData: mood
+      moodData: newMood
     })
-    this.basePieChart = basePie(this.data.width,mood);
+    this.basePieChart = basePie(this.data.width,newMood);
   },
 
   /**
@@ -169,14 +173,10 @@ Page({
     Product.setQuery(query).find().then((res) => {
       var userData = res.data
       var objectLen = userData['objects'].length
-      if(objectLen != 0){
-        this.setData({
-          show: "true"
-        })
-      }
-      var historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
+      var historySingle = { date: 0, mood: 0,}
       var history = []
       var mood = moodBase
+      var flag = "false"
       // 创建新数组
       for (var i = 0; i < objectLen; i++) {
         historySingle.date = userData['objects'][i].created_at
@@ -184,6 +184,7 @@ Page({
         for(var a = 0; a<5; a++){
           if(historySingle.mood == a){
             mood[a].value += 1
+            flag = "true"
           }
         }
         history.push(historySingle)
@@ -191,16 +192,21 @@ Page({
       }
       //output percentage of value
       var totalValue = 0
+      var newMood = []
       for(var b=0;b<5;b++){
+        if(mood[b].value!=0){
+          newMood.push(mood[b])
+          console.log(mood[b])
+        }
         totalValue += mood[b].value
       }
-      for (var c = 0; c < 5; c++) {
-        mood[c].percent = ((mood[c].value/totalValue)*100).toFixed(0)+'%'
+      for (var c = 0; c < newMood.length; c++) {
+        newMood[c].percent = ((newMood[c].value/totalValue)*100).toFixed(0)+'%'
       }
-
       this.setData({
-        moodData: mood,
-        moodDataAll: history
+        moodData: newMood,
+        moodDataAll: history,
+        show: flag
       })
 
 //饼图初始化
@@ -214,7 +220,7 @@ Page({
       this.setData({
         width: windowWidth
       })
-      this.basePieChart = basePie(windowWidth,mood);
+      this.basePieChart = basePie(windowWidth,newMood);
     }, (err) => {
       // err
     })
