@@ -6,14 +6,14 @@
   <!-- <image class="headPic" mode="aspectFit" src="../../../images/doge.png" /> -->
   <view class="description">
     <view class="desText">{{descri}}</view>
-    <image class="quesMark" mode="aspectFit" src="../../../images/quesMarkLight.png" />
+    <image class="quesMark" bindtap="example" mode="aspectFit" src="../../../images/quesMarkLight.png" />
   </view>
   <view class="statement">
     <textarea id="inW1" class="inputArea" placeholder="{{wrongHolder}}" bindinput="inputValue" auto-focus/>
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}
-        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+        <image class="quesMark" bindtap="explain" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
       <picker id="0" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[0].value].id}}">
         <view>▶ {{items[index[0].value].name}} ◀</view>
@@ -26,7 +26,7 @@
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}
-        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+        <image class="quesMark" bindtap="explain" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
       <picker id="1" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[1].value].id}}">
         <view>▶ {{items[index[1].value].name}} ◀</view>
@@ -39,7 +39,7 @@
     <view class="trap">
       <view class="trapTitle">
         {{whatTrap}}
-        <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+        <image class="quesMark" bindtap="explain" mode="aspectFit" src="../../../images/quesMark.png" />
       </view>
       <picker id="2" class="trapPicker" bindchange="trapChange" range="{{items}}" range-key="{{'name'}}" value="{{items[index[2].value].id}}">
         <view>▶ {{items[index[2].value].name}} ◀</view>

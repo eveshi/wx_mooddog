@@ -1,0 +1,9 @@
+<view class="head">
+  <view wx:for="{{items}}">
+    <button class="{{item.choose=='true'?'buttonChoose':'button'}}" data-id="{{item.id}}" bindtap="choose">{{item.name}}</button>
+  </view>
+</view> 
+
+<view class="content">{{contentShow}}</view>
+
+<view class="cite">这里采用《伯恩斯新情绪疗法》对情绪的分类与解析</view>

@@ -1,0 +1,29 @@
+/* pages/input/detailHappy/words/words.wxss */
+
+.head{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: #D96459;
+  height: 36px;
+  width: 80vw;
+  margin: 15vh 10vw 10px 10vw;
+  border-bottom: 1px dotted #72523d;
+}
+
+.content{
+  width: 80vw;
+  text-align: center;
+  font-size: 16px;
+  font-weight: boder;
+  margin: 0 10vw;
+}
+
+.cite{
+  width: 80vw;
+  margin: 10vw;
+  position: absolute;
+  bottom: 15vh;
+  text-align: center;
+  font-size: 11px;
+}

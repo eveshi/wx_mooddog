@@ -1,2 +1,11 @@
 <!--pages/input/example/example.wxml-->
-<text>pages/input/example/example.wxml</text>
+<view class="head">
+  小栗子
+</view>
+
+<view class="tgt">
+  <view class="tgtText">我永远都不可能通过测试了。</view>
+  <view class="tgtTrap">诶~我陷入的思维陷阱是：</view>
+  <view class="tgtTrap">▶ 以偏概全 ◀</view>
+  <view class="tgtText">我这次没有通过测试，但是通过努力，我下次是可以通过的。</view>
+</view>

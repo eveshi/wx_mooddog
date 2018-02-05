@@ -1,1 +1,37 @@
 /* pages/input/example/example.wxss */
+
+.head{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: #D96459;
+  height: 36px;
+  width: 80vw;
+  margin: 20px 10vw 10px 10vw;
+  border-bottom: 1px dotted #72523d;
+}
+
+.tgt{
+  margin: 5vw;
+  padding: 20rpx; 
+  height: 50vh;
+  border-left: 5px solid #8A976A;
+  background-color: #E6E7CE;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);
+  border-radius: 10rpx;
+}
+
+.tgtText{
+  margin-top: 15rpx;
+  padding: 20rpx;
+  height: 15vh;
+  width: 78vw;
+  color: #8A976A;
+  background-color: #FEFEFD;
+  border-radius: 7rpx; 
+}
+
+.tgtTrap{
+  margin-top: 20rpx;
+  text-align: center;
+}

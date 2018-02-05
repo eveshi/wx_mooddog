@@ -10,21 +10,18 @@ Page({
     whatTrap: "诶~我陷入的思维陷阱是：",
     items: [
       { id: 0, name: '请选择' },
-      { id: 1, name: '仅是指责'},
-      { id: 2, name: '全都是和全不是'}
-      // { name: 'Cata', value: '悲观夸大' },
-      // { name: 'DownP', value: '无视积极面' },
-      // { name: 'EmoRea', value: '仅靠感觉判断' },
-      // { name: 'ForTell', value: '悲观预测' },
-      // { name: 'IoUn', value: '总是不确定' },
-      // { name: 'Lab', value: '贴标签' },
-      // { name: 'MinRe', value: '读心' },
-      // { name: 'NegFil', value: '不看整体' },
-      // { name: 'NotA', value: '持续不接受' },
-      // { name: 'Over', value: '极端总结' },
-      // { name: 'Per', value: '只怪自己' },
-      // { name: 'ShoAM', value: '套用自己标准给他人' },
-      // { name: 'No', value: '都不适用' },
+      { id: 1, name: '非此即彼'},
+      { id: 2, name: '以偏概全'},
+      { id: 3, name: '心理过滤' },
+      { id: 4, name: '否定正面思考' },
+      { id: 5, name: '以偏概全' },
+      { id: 6, name: '读心术' },
+      { id: 7, name: '先知错误' },
+      { id: 8, name: '双目镜把戏' },
+      { id: 9, name: '情绪化推理' },
+      { id: 10, name: '"应该"句式' },
+      { id: 11, name: '乱贴标签' },
+      { id: 12, name: '罪责归己' },
     ],
     inValue: [
       {id:"inW1", value: ""},
@@ -73,6 +70,18 @@ Page({
         })
       }
     }
+  },
+
+  example: function(){
+    wx.navigateTo({
+      url: '../example/example',
+    })
+  },
+
+  explain: function(){
+    wx.navigateTo({
+      url: '../explain/explain',
+    })
   },
 
   savemode: function () {

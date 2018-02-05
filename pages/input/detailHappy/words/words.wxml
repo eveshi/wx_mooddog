@@ -1,0 +1,11 @@
+<!--pages/input/detailHappy/words/words.wxml-->
+<!--pages/input/details/words/words.wxml-->
+<view class="head">
+开心的情绪
+</view>
+
+<view class="content">
+爽/心醉/可喜/平静/仰慕/好受/快活/快意/快乐/狂喜/幸福/开心/惊喜/惊喜/满足/心花怒放/愉快/愉悦/开心/快乐/畅快/幸福/期待/害羞/满足
+</view>
+
+<view class="cite">引用自 卓淑玲, 陳學志, & 鄭昭明. (2013). 台灣地區華人情緒與相關心理生理資料庫─ 中文情緒詞常模研究. 中華心理學刊, 55(4), 493-523.</view>

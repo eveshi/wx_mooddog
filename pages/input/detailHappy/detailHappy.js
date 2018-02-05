@@ -24,6 +24,15 @@ Page({
     })
   },
 
+  words: function () {
+    wx.navigateTo({
+      url: 'words/words',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+
   savemode: function () {
     // 向 tableID 为 21194 的数据表插入一条记录
     let tableID = 21194

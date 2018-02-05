@@ -1,22 +1,24 @@
 <!--pages/dataAna/dataAna.wxml-->
-<view class="head" style="{{show=='true'?'':'display: none'}}">
-  <view wx:for="{{buttonName}}">
-    <button class="{{item.choose=='true'?'buttonChoose':'button'}}" data-id="{{item.id}}" bindtap="changeCharts">{{item.name}}</button>
+<view style="{{show=='true'?'':'display: none'}}">
+  <view class="head">
+    <view wx:for="{{buttonName}}">
+      <button class="{{item.choose=='true'?'buttonChoose':'button'}}" data-id="{{item.id}}" bindtap="changeCharts">{{item.name}}</button>
+    </view>
   </view>
-</view>
- 
-<view class="charts">
-  <canvas class="canvas" canvas-id="basePie" />
-</view>
+  
+  <view class="charts">
+    <canvas class="canvas" canvas-id="basePie" />
+  </view>
 
-<view class="general">
-  <view wx:for="{{moodData}}">
-    <view class="generalText">
-    你的<view class="highlight" style="color:{{item.color}}"> {{item.label}} </view>有<view class="highlight" style="color:{{item.color}}"> {{item.value}} </view>条，占所有记录的<view class="highlight" style="color:{{item.color}}"> {{item.percent}}</view>
+  <view class="general">
+    <view wx:for="{{moodData}}">
+      <view class="generalText">
+      你的<view class="highlight" style="color:{{item.color}}"> {{item.label}} </view>有<view class="highlight" style="color:{{item.color}}"> {{item.value}} </view>条，占所有记录的<view class="highlight" style="color:{{item.color}}"> {{item.percent}}</view>
+      </view>
     </view>
   </view>
 </view>
 
-<view class="noplay" style="{{show=='true'?'':'display: none'}}">
+<view class="noplay" style="{{show=='true'?'display: none':''}}">
 暂时还没有任何内容哦~请记录下你的心情再过来看看吧~
 </view>

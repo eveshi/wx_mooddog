@@ -9,8 +9,11 @@
     "pages/input/moodName/moodName",
     "pages/history/history",
     "pages/input/example/example",
+    "pages/input/explain/explain",
     "pages/history/hisDe/hisDe",
-    "pages/dataAna/dataAna"
+    "pages/dataAna/dataAna",
+    "pages/input/details/words/words",
+    "pages/input/detailHappy/words/words"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -59,8 +59,9 @@
 
 .content{
   margin: 10px auto;
-  width: 90vw;
+  width: 80vw;
   text-align: center;
+  padding: 5vw;
 }
 
 .tgt{

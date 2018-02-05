@@ -3,7 +3,7 @@
   <view class="write">
     <view class="head">
       <view class="contentTitle">{{title}}</view>
-      <image class="quesMark" mode="aspectFit" src="../../../images/quesMark.png" />
+      <image class="quesMark" mode="aspectFit" bindtap="words" src="../../../images/quesMark.png" />
     </view>
     <view> 
       <textarea class="content" type="text" placeholder="{{contentHolder}}" bindinput="diary" maxlength='1200' auto-focus/>

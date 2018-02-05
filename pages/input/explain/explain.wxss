@@ -1,0 +1,43 @@
+.head{
+  width: 100vw;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.buttonChoose{
+  width: 27vw;
+  height: 30px;
+  margin: 5px auto;
+  background-color: #72523d;
+  color: #FEFEFD;
+  border-radius: 5px; 
+  font-size: 14px;
+}
+
+.button{
+  width: 27vw;
+  height: 30px;
+  margin: 5px auto;
+  background-color: #FEFEFD;
+  color: #72523d;
+  border-radius: 5px; 
+  font-size: 14px;
+}
+
+.content{
+  width: 90vw;
+  text-align: center;
+  font-size: 14px;
+  font-weight: boder;
+  margin: 0 5vw;
+}
+
+.cite{
+  width: 90vw;
+  margin: 5vw 15px;
+  text-align: center;
+  font-size: 11px;
+}
