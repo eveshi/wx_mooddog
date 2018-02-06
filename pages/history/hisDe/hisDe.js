@@ -16,9 +16,9 @@ const items = [
   { id: 5, name: '以偏概全' },
   { id: 6, name: '读心术' },
   { id: 7, name: '先知错误' },
-  { id: 8, name: '双目镜把戏' },
+  { id: 8, name: '放大缩小' },
   { id: 9, name: '情绪化推理' },
-  { id: 10, name: '"应该"句式' },
+  { id: 10, name: '应该句式' },
   { id: 11, name: '乱贴标签' },
   { id: 12, name: '罪责归己' },
 ]

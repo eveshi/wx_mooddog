@@ -22,7 +22,7 @@
 }
 
 .tgtText{
-  margin-top: 15rpx;
+  /* margin-top: 15rpx; */
   padding: 20rpx;
   height: 15vh;
   width: 78vw;

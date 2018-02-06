@@ -78,7 +78,7 @@ Page({
     var newDate
     if(id==0){
       for(var a=0;a<all.length;a++){
-        for(var b=0;b<4;b++){
+        for(var b=0;b<5;b++){
           if(all[a].mood==b){
             mood[b].value += 1
           }
@@ -88,7 +88,7 @@ Page({
       newDate = date-2592000*3
       for (var a = 0; a < all.length; a++) {
         if(all[a].date > newDate){
-          for (var b = 0; b < 4; b++) {
+          for (var b = 0; b < 5; b++) {
             if (all[a].mood == b) {
               mood[b].value += 1
             }
@@ -99,7 +99,7 @@ Page({
       newDate = date - 2592000
       for (var a = 0; a < all.length; a++) {
         if (all[a].date > newDate) {
-          for (var b = 0; b < 4; b++) {
+          for (var b = 0; b < 5; b++) {
             if (all[a].mood == b) {
               mood[b].value += 1
             }
@@ -110,7 +110,7 @@ Page({
       newDate = date - 604800
       for (var a = 0; a < all.length; a++) {
         if (all[a].date > newDate) {
-          for (var b = 0; b < 4; b++) {
+          for (var b = 0; b < 5; b++) {
             if (all[a].mood == b) {
               mood[b].value += 1
             }

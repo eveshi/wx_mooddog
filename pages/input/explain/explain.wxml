@@ -4,6 +4,8 @@
   </view>
 </view> 
 
-<view class="content">{{contentShow}}</view>
+<view class="content">
+  <text class="text">{{contentShow}}</text>
+</view>
 
 <view class="cite">这里采用《伯恩斯新情绪疗法》对情绪的分类与解析</view>

@@ -28,8 +28,8 @@
 }
 
 .content{
+  margin-top: 20px;
   width: 90vw;
-  text-align: center;
   font-size: 14px;
   font-weight: boder;
   margin: 0 5vw;
