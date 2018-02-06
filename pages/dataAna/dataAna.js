@@ -170,8 +170,9 @@ Page({
     let tableID = 21194
 
     var Product = new wx.BaaS.TableObject(tableID)
-    Product.setQuery(query).find().then((res) => {
+    Product.setQuery(query).limit(1000).find().then((res) => {
       var userData = res.data
+      console.log(res.data)
       var objectLen = userData['objects'].length
       var historySingle = { date: 0, mood: 0,}
       var history = []

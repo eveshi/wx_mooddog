@@ -69,7 +69,7 @@ Page({
         console.log(yH)
         for (var a = 12; a > 0; a--) {
           flag = false
-          for (var i = histo2.length - 1; i > -1; i--) {
+          for (var i = 0; i<histo2.length; i++) {
             if (histo2[i].month == a) {
               console.log(histo2[i].month)
               newCut = { year:0, month:0, day: "", content: "", mood: 0, moodImg: "", _id: "", moodShow: "true" }
@@ -108,11 +108,7 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  getInfo: function(){
     let userInfo = wx.BaaS.storage.get('userinfo')
     // 尝试获取用户信息，若获取失败，则使用 wx.BaaS.login 进行登录
     if (userInfo) {
@@ -139,22 +135,23 @@ Page({
 
     var id = parseInt(userInfo.id)
 
-    query.compare("created_by","=",id)
+    query.compare("created_by", "=", id)
 
     let tableID = 21194
 
     var Product = new wx.BaaS.TableObject(tableID)
-    Product.setQuery(query).find().then((res) => {
+    Product.setQuery(query).limit(1000).orderBy('created_at').find().then((res) => {
       var userData = res.data
+      console.log(userData)
       var objectLen = userData['objects'].length
-      var historySingle = { year: 0, month:0, day:0, content: "", mood: 0, moodImg: "", _id:"" }
+      var historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
       var history = []
       var date
       // 创建新数组
-      for(var i=0; i<objectLen; i++){
-        date = new Date(userData['objects'][i].created_at*1000)
+      for (var i = 0; i < objectLen; i++) {
+        date = new Date(userData['objects'][i].created_at * 1000)
         historySingle.year = date.getFullYear()
-        historySingle.month = date.getMonth()+1
+        historySingle.month = date.getMonth() + 1
         historySingle.day = date.getDate()
         historySingle.content = userData['objects'][i].content
         historySingle.mood = userData['objects'][i].moodSave
@@ -164,18 +161,18 @@ Page({
         historySingle = { year: 0, month: 0, day: 0, content: "", mood: 0, moodImg: "", _id: "" }
       }
       // 筛选出年份和月份
-      var yH = history[history.length-1].year
+      var yH = history[history.length - 1].year
       var yL = history[0].year
       var newArray = []
       var newCut
       var flag
-      for(;yH>yL-1;yH--){
+      for (; yH > yL - 1; yH--) {
         console.log(yH)
-        for(var a=12;a>0;a--){
+        for (var a = 12; a > 0; a--) {
           flag = false
-          for(var i=history.length-1; i>-1; i--){
-            if(history[i].month == a){
-              newCut = { year:0, month: 0, day: "", content: "", mood: 0, moodImg: "", _id: "", moodShow: "true" }
+          for (var i = history.length - 1; i > -1; i--) {
+            if (history[i].month == a) {
+              newCut = { year: 0, month: 0, day: "", content: "", mood: 0, moodImg: "", _id: "", moodShow: "true" }
               if (flag == false) {
                 newArray.push({ year: yH, month: a + "月  ", show: "true" })
                 flag = true
@@ -199,8 +196,14 @@ Page({
     }, (err) => {
       // err
     })
+  },
 
-
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this
+    that.getInfo()
   },
 
   /**
@@ -214,7 +217,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -235,7 +238,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
