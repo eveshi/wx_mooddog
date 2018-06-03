@@ -15,3 +15,4 @@ git@github.com:eveshi/wx_mooddog.git
 
 ### Preview
 
+<img width="200" src="https://raw.githubusercontent.com/eveshi/wx_mooddog/master/images/README/interface_1.PNG"> <img width="200" src="https://raw.githubusercontent.com/eveshi/wx_mooddog/master/images/README/interface_2.PNG"> <img width="200" src="https://raw.githubusercontent.com/eveshi/wx_mooddog/master/images/README/interface_3.PNG"> <img width="200" src="https://raw.githubusercontent.com/eveshi/wx_mooddog/master/images/README/interface_4.JPG">
